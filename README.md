@@ -15,7 +15,6 @@
 
 - [About](#about)
 - [Getting Started](#getting_started)
-- [Usage](#usage)
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
