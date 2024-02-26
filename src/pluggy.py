@@ -6,7 +6,6 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-
 class Pluggy:
     API_URL = "https://api.pluggy.ai"
     ACCEPT_JSON_RESPONSE = {
@@ -39,17 +38,17 @@ class Pluggy:
             return None
 
 
-def load_env():
+def get_client_info():
     load_dotenv()
 
-    CLIENT_ID = os.getenv("CLIENT_ID")
-    CLIENT_SECRET = os.getenv("CLIENT_SECRET")
+    client_id = os.getenv("CLIENT_ID")
+    client_secret = os.getenv("CLIENT_SECRET")
 
-    if not CLIENT_ID or not CLIENT_SECRET:
+    if not client_id or not client_secret:
         logging.error("Please set the CLIENT_ID and CLIENT_SECRET in .env")
         exit(1)
 
-    return CLIENT_ID, CLIENT_SECRET
+    return client_id, client_secret
 
 
 if __name__ == "__main__":
@@ -60,8 +59,8 @@ if __name__ == "__main__":
     # Load environment variables from .env file
     load_dotenv()
 
-    CLIENT_ID, CLIENT_SECRET = load_env()
+    client_id, client_secret = get_client_info()
 
-    pluggy = Pluggy(CLIENT_ID, CLIENT_SECRET)
+    pluggy = Pluggy(client_id, client_secret)
     api_key = pluggy.generate_api_key()
     logging.info(f"API Key: {api_key}")
