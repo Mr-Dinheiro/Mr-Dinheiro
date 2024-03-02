@@ -41,3 +41,4 @@ if __name__ == "__main__":
     except pluggy_lib.ConnectionError as e:
         logger.error(f"An error occurred: {e}")
 
+/home/valeriaps/PluggyTests/src/pluggy.py

@@ -1,0 +1,87 @@
+date,category,title,amount
+2024-02-05,restaurante,Ifd*Arcos Dourados Com,96.69
+2024-02-04,casa,Sup Epa Cento Cinq e T,36.00
+2024-02-03,restaurante,Ifd*Balihai Burguer,178.30
+2024-02-03,transporte,Uber *Uber *Trip,13.93
+2024-02-03,transporte,Uber *Uber *Trip,12.96
+2024-02-03,outros,Precolandia,51.60
+2024-02-03,restaurante,Cine Cafe Bistro,62.99
+2024-02-03,vestuário,Havaianas Rd,44.99
+2024-02-03,transporte,Uber *Uber *Trip,14.95
+2024-02-03,transporte,Uber *Uber *Trip,11.90
+2024-02-02,transporte,Uber *Uber *Trip,13.93
+2024-02-02,transporte,Uber *Uber *Trip,19.95
+2024-02-02,transporte,Uber *Uber *Trip,14.97
+2024-02-02,vestuário,Zara,189.75
+2024-02-01,transporte,Pag*Hilariorobertodep,20.80
+2024-02-01,transporte,Uber *Uber *Trip,14.98
+2024-02-01,vestuário,Belo Horizonte,59.00
+2024-01-31,transporte,Uber *Uber *Trip,14.98
+2024-01-31,transporte,Uber *Uber *Trip,16.95
+2024-01-31,transporte,Uber *Uber *Trip,14.95
+2024-01-31,outros,Amazonprimebr,14.90
+2024-01-31,transporte,Uber *Uber *Trip,14.91
+2024-01-31,educação,Amazon Digital,18.37
+2024-01-31,supermercado,Supermercado e Padaria,89.71
+2024-01-31,eletrônicos,Amazon Marketplace,62.77
+2024-01-30,casa,Petlove*Order21102589,42.21
+2024-01-29,restaurante,Ifd*Dona Maria Gastrob,86.90
+2024-01-29,outros,Amazonprimebr,14.90
+2024-01-28,transporte,Uber *Uber *Trip,14.95
+2024-01-28,supermercado,Maria Chocolate,89.70
+2024-01-28,transporte,Uber *Uber *Trip,17.91
+2024-01-28,transporte,Uber *Uber *Trip,11.93
+2024-01-28,transporte,Uber *Uber *Trip,12.92
+2024-01-27,educação,Amazon Digital,14.90
+2024-01-26,restaurante,Ifood *Ifood,107.79
+2024-01-25,transporte,Uber *Uber *Trip,19.98
+2024-01-25,saúde,Drogaria Araujo Filial,192.94
+2024-01-25,lazer,Ifd*Bv Eventos e Recep,176.60
+2024-01-25,transporte,Uber *Uber *Trip,19.97
+2024-01-24,serviços,Google Fanatee,4.99
+2024-01-22,transporte,Uber *Uber *Trip,39.96
+2024-01-22,supermercado,Ifd*Agile Comercio,83.80
+2024-01-21,transporte,Uber *Uber *Trip,39.99
+2024-01-21,saúde,Drogaria Araujo,127.77
+2024-01-19,transporte,Uber *Uber *Trip,14.96
+2024-01-19,transporte,Uber *Uber *Trip,14.94
+2024-01-18,restaurante,Ifd*Riso Savassi Resta,49.99
+2024-01-18,casa,Petlove Order,42.21
+2024-01-17,transporte,Uber *Uber *Trip,14.90
+2024-01-17,restaurante,Ifd*Tempao,68.83
+2024-01-17,educação,Kalunga Shopping Boule,120.50
+2024-01-17,transporte,Uber *Uber *Trip,14.97
+2024-01-17,educação,Amazon Digital,37.90
+2024-01-17,casa,Superpet Market,17.90
+2024-01-16,loan_late_tax,IOF de atraso,10.13
+2024-01-16,loan_late_fee,Multa de atraso,52.20
+2024-01-16,payment,Pagamento recebido,-2599.97
+2024-01-16,transporte,Uber *Uber *Trip,5.87
+2024-01-16,serviços,Netflix.Com,25.90
+2024-01-15,restaurante,Ifood *Ifd*Outback S,154.69
+2024-01-15,loan_late,Saldo em atraso,2599.97
+2024-01-15,loan_late_transitory,Crédito de atraso,-2599.97
+2024-01-13,supermercado,Ifood *Ifd*Comercial,107.01
+2024-01-13,restaurante,Ifood *Ifd*Outback S,114.59
+2024-01-12,restaurante,Lullo Gelato Savassi,43.70
+2024-01-12,transporte,Uber *Uber *Trip,14.96
+2024-01-12,restaurante,Fugu Izakaya,190.30
+2024-01-12,transporte,Uber *Uber *Trip,14.93
+2024-01-12,transporte,Uber *Uber *Trip,11.96
+2024-01-11,transporte,Uber *Uber *Trip,16.95
+2024-01-11,transporte,Uber Uber *Trip Help.U,15.10
+2024-01-11,restaurante,Ifd*Varanda 1389 Deliv,107.82
+2024-01-10,transporte,Uber *Uber *Trip,14.95
+2024-01-10,supermercado,Carrefour Bha,57.10
+2024-01-10,educação,Kalunga Shopping Boule,87.00
+2024-01-10,transporte,Uber *Uber *Trip,14.90
+2024-01-08,eletrônicos,Amazon,37.78
+2024-01-07,transporte,Uber *Uber *Trip,16.96
+2024-01-07,transporte,Uber *Uber *Trip,17.91
+2024-01-06,transporte,Uber *Uber *Trip,14.96
+2024-01-06,serviços,Iugu*Meudinheiro 3/3,66.80
+2024-01-06,casa,Pet Love*Order10400198 2/2,80.50
+2024-01-06,restaurante,Pag*Vinobh,234.08
+2024-01-06,casa,Leroy Merlin 6/6,624.98
+2024-01-06,transporte,Uber *Uber *Trip,12.90
+2024-01-06,transporte,Uber *Uber *Trip,13.92
