@@ -1,2 +1,4 @@
 venv
 .env
+spark-3.2.0-bin-hadoop3.2.tgz
+experimental/__pycache__/parse_credit_card_lib.cpython-311.pyc
