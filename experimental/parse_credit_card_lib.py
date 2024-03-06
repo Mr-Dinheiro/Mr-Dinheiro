@@ -1,6 +1,6 @@
 import pandas as pd
 import zoneinfo
-import dataclasses
+import dataclasseshttps://github.com/GiowGiow/PluggyTests/blob/main/experimental/parse_credit_card_lib.py
 
 @dataclasses.dataclass
 class PurchaseMonth:
@@ -18,7 +18,8 @@ class PurchaseMonth:
 
     def __gt__(self, other):
         if self.year > other.year: return True
-        if self.month > other.month: return Tur
+        if self.year < other.year: return False
+        if self.month > other.month: return True
         return False
 
 
