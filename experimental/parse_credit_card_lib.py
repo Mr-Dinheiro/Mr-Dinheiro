@@ -3,17 +3,24 @@ import zoneinfo
 import dataclasses
 
 @dataclasses.dataclass
-class AccrualMonth:
+class PurchaseMonth:
     year: int
     month: int
 
-    # def __repr__(self):
-    #     return f"{self.year}/{self.month}"
+    def __repr__(self) -> str:
+        return f'{self.year}/{self.month}'
+
     def __hash__(self):
         return hash(self.year*100 + self.month)
 
     def __eq__(self, other):
         return self.year == other.year and self.month == other.month
+
+    def __gt__(self, other):
+        if self.year > other.year: return True
+        if self.month > other.month: return Tur
+        return False
+
 
 def get_data(file_path: str):
     df = pd.read_csv(file_path)
@@ -26,8 +33,6 @@ def get_data(file_path: str):
 def get_transaction_categories(df: pd.DataFrame) -> set:
     return df['category'].cat.categories
 
-def get_total_by_category(df: pd.DataFrame) -> pd.DataFrame:
-    return df.groupby('category')['amount'].agg(sum)
 
 def add_new_category(df: pd.DataFrame, new_category: str) -> None:
     if new_category in df['category'].cat.categories: return
@@ -41,13 +46,14 @@ def batch_update_category(df: pd.DataFrame, from_category: str, to_category:str)
     add_new_category(df, to_category)
     return df.mask(df == from_category, to_category)
 
-def date_to_accrual_month(date: pd.Timestamp):
-    return AccrualMonth(date.date().year, date.date().month)
+def date_to_purchase_month(date: pd.Timestamp):
+    return PurchaseMonth(date.date().year, date.date().month)
 
-def add_accrual_month_column(df: pd.DataFrame):
-    ts = pd.Series(date_to_accrual_month(df['date']))
-    df.insert(2, 'accrual_month', ts)
+def add_purchase_month_column(df: pd.DataFrame):
+    ts = pd.Series(date_to_purchase_month(df['date']))
+    df.insert(2, 'purchase_month', ts)
 
 
-def get_total_by_accrual_month(df: pd.DataFrame) -> pd.DataFrame:
-    return df.groupby('accrual_month')['amount'].agg(sum)
+
+def get_total_by(df: pd.DataFrame, column_name; str) -> pd.DataFrame:
+    return df.groupby(column_name)['amount'].agg(sum)
