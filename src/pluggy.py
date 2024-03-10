@@ -11,6 +11,7 @@ ACCEPT_JSON_RESPONSE = {
     "content-type": "application/json",
 }
 
+
 def get_client_info() -> None:
     client_id = os.getenv("CLIENT_ID")
     client_secret = os.getenv("CLIENT_SECRET")
@@ -35,10 +36,8 @@ if __name__ == "__main__":
 
     pluggy = pluggy_lib.PluggyConnector(client_id, client_secret, API_URL)
 
-    try: 
+    try:
         api_key = pluggy.generate_api_key(ACCEPT_JSON_RESPONSE)
         logging.info(f"API Key: {api_key}")
     except pluggy_lib.ConnectionError as e:
         logger.error(f"An error occurred: {e}")
-
-/home/valeriaps/PluggyTests/src/pluggy.py

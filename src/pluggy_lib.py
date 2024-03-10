@@ -8,7 +8,6 @@ class ConnectionError(Exception):
 
 
 class PluggyConnector:
-
     def __init__(self, client_id: str, client_secret: str, api_url: str):
         self.client_id = client_id
         self.client_secret = client_secret
@@ -16,9 +15,11 @@ class PluggyConnector:
 
     def _call_api_endpoint(self, payload: str, endpoint: str, headers: str) -> None:
         url_to_call = f"{self.api_url}/{endpoint}"
-
+        default_timeout = 30
         try:
-            response = requests.post(url_to_call, json=payload, headers=headers)
+            response = requests.post(
+                url_to_call, json=payload, headers=headers, timeout=default_timeout
+            )
             response.raise_for_status()
             return response.json()
         except (exceptions.RequestException, exceptions.HTTPError, exceptions.Timeout):
@@ -31,4 +32,3 @@ class PluggyConnector:
             return response_json.get("apiKey")
         except ConnectionError as e:
             raise e
-            
