@@ -1,6 +1,6 @@
 import pandas as pd
 import zoneinfo
-import primitives
+import credit_card.primitives as primitives
 import json
 
 def get_credit_card_transactions(file_path: str):

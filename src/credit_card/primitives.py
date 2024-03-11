@@ -1,5 +1,7 @@
 import dataclasses
-import validators
+import credit_card.validators as validators
+import datetime
+
 
 class CreditCardName:
     def __init__(self, name: int):
@@ -36,3 +38,32 @@ class CreditCardInfo:
     name: CreditCardName
     due_date: PossibleDueDate
     closing_date: PossibleDueDate
+
+
+class NubankTransactionId:
+    def __init__(self, nubank_id):
+        "format: 00000000-0000-0000-0000-000000000000"
+        self.nubank_id = nubank_id
+
+@dataclasses.dataclass
+class NubankRawCreditCardTransaction:
+    transaction_id: NubankTransactionId
+    date: datetime.date
+    description: str
+    descriptionRaw: str
+    # currencyCode: ccy.currency
+    # amount:
+    # amountInAccountCurrency:
+    # category:
+    # categoryId:
+    # balance:
+    # accountId:
+    # providerCode:
+    # status:
+    # paymentData:
+    # transaction_type:
+    # creditCardMetadata:
+    # acquirerData:
+    # merchant:
+    # createdAt:
+    # updatedAt:
