@@ -1,7 +1,20 @@
-from enum import Enum
+from enum import Enum, EnumMeta
 
 
-class ItemStatus(Enum):
+class MetaEnum(EnumMeta):
+    def __contains__(cls, item):
+        try:
+            cls(item)
+        except ValueError:
+            return False
+        return True
+
+
+class SearchableEnum(Enum, metaclass=MetaEnum):
+    pass
+
+
+class ItemStatus(SearchableEnum):
     UPDATING = "The connection is syncing with the provider. An update process is in progress and will be updated soon."
     LOGIN_ERROR = "The sync process finished with errors. The connection must be updated to execute again. We won't trigger auto-sync updates until new credentials parameters are provided."
     OUTDATED = "The sync process finished with errors. The parameters were correctly validated, but there was an error in the last execution. It can be retried."
@@ -9,7 +22,7 @@ class ItemStatus(Enum):
     UPDATED = "The sync process finished successfully. The last sync process has completed successfully and all new data is available to collect."
 
 
-class ItemStatusToExecutionStatus(Enum):
+class ItemStatusToExecutionStatus(SearchableEnum):
     UPDATING = [
         "CREATED",
         "LOGIN_IN_PROGRESS",
@@ -43,7 +56,7 @@ class ItemStatusToExecutionStatus(Enum):
     UPDATED = ["SUCCESS", "PARTIAL_SUCCESS"]
 
 
-class ExecutionStatusDetail(Enum):
+class TransientExecutionStatus(SearchableEnum):
     CREATED = "The connection was successfully initiated."
     LOGIN_IN_PROGRESS = "The connection is currently in the Login authentication step."
     LOGIN_MFA_IN_PROGRESS = "The connection is currently in the second Login authentication step. This state happens after submitting an MFA token parameter only."

@@ -1,13 +1,15 @@
+from typing import Any, Callable, Dict, List, Union
+
 import pandas as pd
 
 
 class PluggyDataHandler:
     def save_transactions_as(
         self,
-        transactions,
-        file_path="transactions",
-        format="csv",
-    ):
+        transactions: List[Dict[str, Any]],
+        file_path: str = "transactions",
+        format: str = "csv",
+    ) -> None:
         obfuscated_transactions = self.obfuscate_transactions(transactions)
 
         df = pd.DataFrame(obfuscated_transactions)
@@ -18,11 +20,13 @@ class PluggyDataHandler:
         else:
             raise ValueError("Invalid format. Use 'csv' or 'jsonl'")
 
-    def obfuscate_field(self, data, field):
+    def obfuscate_field(self, data: Dict[str, Any], field: str) -> None:
         if field in data:
             data[field] = self.obfuscate(data[field])
 
-    def obfuscate_transactions(self, transactions):
+    def obfuscate_transactions(
+        self, transactions: List[Dict[str, Any]]
+    ) -> List[Dict[str, Any]]:
         for transaction in transactions:
             self.obfuscate_field(transaction, "id")
             self.obfuscate_field(transaction, "accountId")
@@ -39,13 +43,15 @@ class PluggyDataHandler:
 
         return transactions
 
-    def obfuscate(self, field):
-        obfuscation_functions = {
+    def obfuscate(self, field: Union[int, float, str]) -> Union[int, float, str]:
+        obfuscation_functions: Dict[
+            type, Callable[[Union[int, float, str]], Union[int, float, str]]
+        ] = {
             int: lambda x: int("".join("0" if ch.isalnum() else ch for ch in str(x))),
             float: lambda x: float(
                 "".join("0" if ch.isalnum() else ch for ch in str(x))
             ),
-            str: lambda x: "".join("0" if ch.isalnum() else ch for ch in x),
+            str: lambda x: "".join("0" if ch.isalnum() else ch for ch in str(x)),
         }
 
         obfuscate_func = obfuscation_functions.get(type(field))
