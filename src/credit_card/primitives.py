@@ -1,6 +1,6 @@
 import dataclasses
-import credit_card.validators as validators
 import datetime
+import validators
 
 
 class CreditCardName:
