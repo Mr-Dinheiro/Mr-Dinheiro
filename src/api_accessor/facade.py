@@ -1,6 +1,6 @@
 from typing import Any
 from data_handler import PluggyDataHandler
-from src.api_accessor.pluggy_api import PluggyApi
+from pluggy_api import PluggyApi
 import re
 
 
